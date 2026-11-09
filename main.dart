@@ -1,51 +1,51 @@
 class Appointment {
-  String title;
-  String description;
-  String date;
-  bool isCompleted;
+String title;
+String date;
+String time;
+String type;
 
-  Appointment(
-    this.title,
-    this.description,
-    this.date,
-    this.isCompleted,
-  );
-
-  void showInfo() {
-    print("Title: $title");
-    print("Description: $description");
-    print("Date: $date");
-    print("Completed: $isCompleted");
-  }
+Appointment({
+required this.title,
+required this.date,
+required this.time,
+required this.type,
+});
 }
 
 void main() {
 
-  List<Appointment> appointments = [
-    Appointment(
-      "Math Exam",
-      "Final mathematics exam",
-      "2026-11-12",
-      false,
-    ),
+List<Appointment> appointments = [
+Appointment(
+title: 'AI Lecture',
+date: '2026-11-10',
+time: '09:00 AM',
+type: 'Study',
+),
 
-    Appointment(
-      "Doctor Appointment",
-      "Visit the doctor",
-      "2026-11-13",
-      false,
-    ),
+Appointment(
+  title: 'Project Meeting',
+  date: '2026-11-11',
+  time: '11:00 AM',
+  type: 'Work',
+),
 
-    Appointment(
-      "Project Meeting",
-      "Discuss the graduation project",
-      "2026-11-14",
-      true,
-    ),
-  ];
+Appointment(
+  title: 'Personal Appointment',
+  date: '2026-11-12',
+  time: '04:00 PM',
+  type: 'Personal',
+),
+];
 
-  for (var appointment in appointments) {
-    print("----------------------");
-    appointment.showInfo();
-  }
+print('========== Mawidy App ==========');
+print('       My Appointments');
+print('================================');
+
+for (var appointment in appointments) {
+print('Title: ${appointment.title}');
+print('Date: ${appointment.date}');
+print('Time: ${appointment.time}');
+print('Type: ${appointment.type}');
+print('--------------------------------');
+}
 }
